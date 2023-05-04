@@ -1,0 +1,802 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     26926,        801]
+NotebookOptionsPosition[     24136,        739]
+NotebookOutlinePosition[     24499,        755]
+CellTagsIndexPosition[     24456,        752]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.854768152546031*^9, 
+  3.854768153696287*^9}},ExpressionUUID->"c6a5399a-16ca-4d73-993f-\
+20f1e4d5ddfb"],
+
+Cell["\<\
+Question1 Find the Lagrange' s form of Interpolating Polynomial for the given \
+function or function data :
+  (-1, 5), (0, 1), (1, 1), (2, 11)\
+\>", "Text",
+ CellChangeTimes->{{3.8547455019064016`*^9, 3.8547455516768627`*^9}, {
+  3.854780359466174*^9, 3.854780389248049*^9}},
+ EmphasizeSyntaxErrors->
+  True,ExpressionUUID->"81ac7cd8-2f6d-4543-bf59-837426857e16"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xi", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "0", ",", "1", ",", "2"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fi", "=", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", "1", ",", "1", ",", "11"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"Length", "[", "xi", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"k", "=", "1"}], ",", 
+    RowBox[{"k", "\[LessEqual]", "n"}], ",", 
+    RowBox[{"k", "++"}], ",", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["L", "k"], "[", "x_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        UnderoverscriptBox["\[Product]", 
+         RowBox[{"j", "=", "1"}], 
+         RowBox[{"k", "-", "1"}]], 
+        FractionBox[
+         RowBox[{"x", "-", 
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}], 
+         RowBox[{
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "k", "]"}], "]"}], "-", 
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}]]}], ")"}], "*", 
+      RowBox[{"(", 
+       RowBox[{
+        UnderoverscriptBox["\[Product]", 
+         RowBox[{"j", "=", 
+          RowBox[{"k", "+", "1"}]}], "n"], 
+        FractionBox[
+         RowBox[{"x", "-", 
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}], 
+         RowBox[{
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "k", "]"}], "]"}], "-", 
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}]]}], ")"}]}]}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "x_", "]"}], "=", 
+   RowBox[{
+    UnderoverscriptBox["\[Sum]", 
+     RowBox[{"k", "=", "1"}], "n"], 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["L", "k"], "[", "x", "]"}], "*", 
+     RowBox[{"fi", "[", 
+      RowBox[{"[", "k", "]"}], "]"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Lagrange polynomial p(x)=\>\"", ",", 
+   RowBox[{"p", "[", "x", "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Simlified polynomial p(x)=\>\"", ",", " ", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"p", "[", "x", "]"}], "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Approximate value of f at x=1 is \>\"", ",", " ", 
+   RowBox[{"p", "[", "1", "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8547444739916663`*^9, 3.854744595511199*^9}, {
+  3.854744683251845*^9, 3.8547450779221716`*^9}, {3.8547451584256425`*^9, 
+  3.8547453631636066`*^9}, {3.8547454147929463`*^9, 3.8547454247497463`*^9}, {
+  3.854745468425338*^9, 3.8547454733195524`*^9}, {3.854780458814499*^9, 
+  3.8547804745054846`*^9}},
+ CellLabel->"In[57]:=",ExpressionUUID->"a50b3661-211f-4901-8945-a65de96b3050"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Lagrange polynomial p(x)=\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["5", "6"]}], " ", 
+     RowBox[{"(", 
+      RowBox[{"1", "-", "x"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{"2", "-", "x"}], ")"}], " ", "x"}], "+", 
+    RowBox[{
+     FractionBox["1", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{"1", "-", "x"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{"2", "-", "x"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{"1", "+", "x"}], ")"}]}], "+", 
+    RowBox[{
+     FractionBox["1", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{"2", "-", "x"}], ")"}], " ", "x", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", "+", "x"}], ")"}]}], "+", 
+    RowBox[{
+     FractionBox["11", "6"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "x"}], ")"}], " ", "x", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", "+", "x"}], ")"}]}]}]}],
+  SequenceForm[
+  "Lagrange polynomial p(x)=", 
+   Rational[-5, 6] (1 - $CellContext`x) (2 - $CellContext`x) $CellContext`x + 
+   Rational[1, 2] (1 - $CellContext`x) (2 - $CellContext`x) (
+     1 + $CellContext`x) + 
+   Rational[1, 2] (2 - $CellContext`x) $CellContext`x (1 + $CellContext`x) + 
+   Rational[11, 6] (-1 + $CellContext`x) $CellContext`x (1 + $CellContext`x)],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.854745477124508*^9, {3.85476913440877*^9, 3.8547691402227707`*^9}, {
+   3.854780460564438*^9, 3.8547804768022623`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[57]:=",ExpressionUUID->"94b7bbaf-2254-47fe-a0cc-c71cbec25b3c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Simlified polynomial p(x)=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"1", "-", 
+    RowBox[{"3", " ", "x"}], "+", 
+    RowBox[{"2", " ", 
+     SuperscriptBox["x", "2"]}], "+", 
+    SuperscriptBox["x", "3"]}]}],
+  SequenceForm[
+  "Simlified polynomial p(x)=", 1 - 3 $CellContext`x + 
+   2 $CellContext`x^2 + $CellContext`x^3],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.854745477124508*^9, {3.85476913440877*^9, 3.8547691402227707`*^9}, {
+   3.854780460564438*^9, 3.8547804768022623`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[57]:=",ExpressionUUID->"8dd20943-4dec-4d86-a98d-5f0705aaa194"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Approximate value of f at x=1 is \"\>", "\[InvisibleSpace]", 
+   "1"}],
+  SequenceForm["Approximate value of f at x=1 is ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.854745477124508*^9, {3.85476913440877*^9, 3.8547691402227707`*^9}, {
+   3.854780460564438*^9, 3.8547804768178844`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[57]:=",ExpressionUUID->"5834d086-a4b7-4f21-886c-d13d44e155db"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xi", "=", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fi", "=", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "5", ",", "10"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"Length", "[", "xi", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"k", "=", "1"}], ",", 
+    RowBox[{"k", "\[LessEqual]", "n"}], ",", 
+    RowBox[{"k", "++"}], ",", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["L", "k"], "[", "x_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        UnderoverscriptBox["\[Product]", 
+         RowBox[{"j", "=", "1"}], 
+         RowBox[{"k", "-", "1"}]], 
+        FractionBox[
+         RowBox[{"x", "-", 
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}], 
+         RowBox[{
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "k", "]"}], "]"}], "-", 
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}]]}], ")"}], "*", 
+      RowBox[{"(", 
+       RowBox[{
+        UnderoverscriptBox["\[Product]", 
+         RowBox[{"j", "=", 
+          RowBox[{"k", "+", "1"}]}], "n"], 
+        FractionBox[
+         RowBox[{"x", "-", 
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}], 
+         RowBox[{
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "k", "]"}], "]"}], "-", 
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}]]}], ")"}]}]}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "x_", "]"}], "=", 
+   RowBox[{
+    UnderoverscriptBox["\[Sum]", 
+     RowBox[{"k", "=", "1"}], "n"], 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["L", "k"], "[", "x", "]"}], "*", 
+     RowBox[{"fi", "[", 
+      RowBox[{"[", "k", "]"}], "]"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Lagrange polynomial p(x)=\>\"", ",", 
+   RowBox[{"p", "[", "x", "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Simlified polynomial p(x)=\>\"", ",", " ", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"p", "[", "x", "]"}], "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Approximate value of f at x=2 is \>\"", ",", " ", 
+   RowBox[{"p", "[", "2", "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8547691628041415`*^9, 3.854769193822667*^9}, {
+  3.854780509576068*^9, 3.854780514466566*^9}},
+ CellLabel->"In[81]:=",ExpressionUUID->"1cc45921-3f7c-4a47-b46a-aa424965cd61"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Lagrange polynomial p(x)=\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"2", "-", "x"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{"3", "-", "x"}], ")"}]}], "+", 
+    RowBox[{"5", " ", 
+     RowBox[{"(", 
+      RowBox[{"3", "-", "x"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "x"}], ")"}]}], "+", 
+    RowBox[{"5", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "2"}], "+", "x"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "x"}], ")"}]}]}]}],
+  SequenceForm[
+  "Lagrange polynomial p(x)=", (2 - $CellContext`x) (3 - $CellContext`x) + 
+   5 (3 - $CellContext`x) (-1 + $CellContext`x) + 
+   5 (-2 + $CellContext`x) (-1 + $CellContext`x)],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8547805288600636`*^9},
+ CellLabel->
+  "During evaluation of \
+In[81]:=",ExpressionUUID->"ac2f7e2c-0522-4ac4-9b99-94a27c5c3cf1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Simlified polynomial p(x)=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"1", "+", 
+    SuperscriptBox["x", "2"]}]}],
+  SequenceForm["Simlified polynomial p(x)=", 1 + $CellContext`x^2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8547805288600636`*^9},
+ CellLabel->
+  "During evaluation of \
+In[81]:=",ExpressionUUID->"b32b70a7-5615-4ce2-8e48-1b1f704c5ccd"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Approximate value of f at x=2 is \"\>", "\[InvisibleSpace]", 
+   "5"}],
+  SequenceForm["Approximate value of f at x=2 is ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.854780528875689*^9},
+ CellLabel->
+  "During evaluation of \
+In[81]:=",ExpressionUUID->"3b071be7-f8ad-44c4-a4a9-3c8fab3a71e8"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xi", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "3"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fi", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"Length", "[", "xi", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"k", "=", "1"}], ",", 
+    RowBox[{"k", "\[LessEqual]", "n"}], ",", 
+    RowBox[{"k", "++"}], ",", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["L", "k"], "[", "x_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        UnderoverscriptBox["\[Product]", 
+         RowBox[{"j", "=", "1"}], 
+         RowBox[{"k", "-", "1"}]], 
+        FractionBox[
+         RowBox[{"x", "-", 
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}], 
+         RowBox[{
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "k", "]"}], "]"}], "-", 
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}]]}], ")"}], "*", 
+      RowBox[{"(", 
+       RowBox[{
+        UnderoverscriptBox["\[Product]", 
+         RowBox[{"j", "=", 
+          RowBox[{"k", "+", "1"}]}], "n"], 
+        FractionBox[
+         RowBox[{"x", "-", 
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}], 
+         RowBox[{
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "k", "]"}], "]"}], "-", 
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}]]}], ")"}]}]}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "x_", "]"}], "=", 
+   RowBox[{
+    UnderoverscriptBox["\[Sum]", 
+     RowBox[{"k", "=", "1"}], "n"], 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["L", "k"], "[", "x", "]"}], "*", 
+     RowBox[{"fi", "[", 
+      RowBox[{"[", "k", "]"}], "]"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Lagrange polynomial p(x)=\>\"", ",", 
+   RowBox[{"p", "[", "x", "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Simlified polynomial p(x)=\>\"", ",", " ", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"p", "[", "x", "]"}], "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Approximate value of f at x=1.5 is \>\"", ",", " ", 
+   RowBox[{"p", "[", "1.5", "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8547692259978848`*^9, 3.854769241313799*^9}},
+ CellLabel->"In[89]:=",ExpressionUUID->"e0727823-a5e2-447c-bc9e-e53c0ba63a4a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Lagrange polynomial p(x)=\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    FractionBox["1", "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{"3", "-", "x"}], ")"}], " ", "x"}]}],
+  SequenceForm[
+  "Lagrange polynomial p(x)=", 
+   Rational[1, 2] (3 - $CellContext`x) $CellContext`x],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.85476924507928*^9, 3.8547805828176794`*^9},
+ CellLabel->
+  "During evaluation of \
+In[89]:=",ExpressionUUID->"0c4bccae-ce2e-4926-8ce6-75ef219a7ac2"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Simlified polynomial p(x)=\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox["1", "2"]}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "3"}], "+", "x"}], ")"}], " ", "x"}]}],
+  SequenceForm[
+  "Simlified polynomial p(x)=", 
+   Rational[-1, 2] (-3 + $CellContext`x) $CellContext`x],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.85476924507928*^9, 3.8547805828333035`*^9},
+ CellLabel->
+  "During evaluation of \
+In[89]:=",ExpressionUUID->"94ea5603-1a48-40a8-b223-b261865792fb"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Approximate value of f at x=1.5 is \"\>", "\[InvisibleSpace]", 
+   "1.125`"}],
+  SequenceForm["Approximate value of f at x=1.5 is ", 1.125],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.85476924507928*^9, 3.8547805828333035`*^9},
+ CellLabel->
+  "During evaluation of \
+In[89]:=",ExpressionUUID->"42117007-15ea-427e-b215-82beab8f99ce"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xi", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "3", ",", "4"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fi", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0", ",", "55"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"Length", "[", "xi", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"k", "=", "1"}], ",", 
+    RowBox[{"k", "\[LessEqual]", "n"}], ",", 
+    RowBox[{"k", "++"}], ",", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["L", "k"], "[", "x_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        UnderoverscriptBox["\[Product]", 
+         RowBox[{"j", "=", "1"}], 
+         RowBox[{"k", "-", "1"}]], 
+        FractionBox[
+         RowBox[{"x", "-", 
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}], 
+         RowBox[{
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "k", "]"}], "]"}], "-", 
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}]]}], ")"}], "*", 
+      RowBox[{"(", 
+       RowBox[{
+        UnderoverscriptBox["\[Product]", 
+         RowBox[{"j", "=", 
+          RowBox[{"k", "+", "1"}]}], "n"], 
+        FractionBox[
+         RowBox[{"x", "-", 
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}], 
+         RowBox[{
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "k", "]"}], "]"}], "-", 
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}]]}], ")"}]}]}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "x_", "]"}], "=", 
+   RowBox[{
+    UnderoverscriptBox["\[Sum]", 
+     RowBox[{"k", "=", "1"}], "n"], 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["L", "k"], "[", "x", "]"}], "*", 
+     RowBox[{"fi", "[", 
+      RowBox[{"[", "k", "]"}], "]"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Lagrange polynomial p(x)=\>\"", ",", 
+   RowBox[{"p", "[", "x", "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Simlified polynomial p(x)=\>\"", ",", " ", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"p", "[", "x", "]"}], "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Approximate value of f at x=1.5 is \>\"", ",", " ", 
+   RowBox[{"p", "[", "1.5", "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.854769257708803*^9, 3.854769259177538*^9}, {
+  3.854769316593385*^9, 3.8547693286242714`*^9}},
+ CellLabel->"In[33]:=",ExpressionUUID->"be0ec3e0-9285-41c2-bc29-329b3e9b74f8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Lagrange polynomial p(x)=\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{
+     FractionBox["1", "6"], " ", 
+     RowBox[{"(", 
+      RowBox[{"3", "-", "x"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{"4", "-", "x"}], ")"}], " ", "x"}], "+", 
+    RowBox[{
+     FractionBox["55", "12"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "3"}], "+", "x"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "x"}], ")"}], " ", "x"}]}]}],
+  SequenceForm[
+  "Lagrange polynomial p(x)=", 
+   Rational[1, 6] (3 - $CellContext`x) (4 - $CellContext`x) $CellContext`x + 
+   Rational[55, 
+      12] (-3 + $CellContext`x) (-1 + $CellContext`x) $CellContext`x],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8547693295304637`*^9},
+ CellLabel->
+  "During evaluation of \
+In[33]:=",ExpressionUUID->"4219fec7-fa3f-4116-a257-c00891114fd5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Simlified polynomial p(x)=\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    FractionBox["1", "4"], " ", "x", " ", 
+    RowBox[{"(", 
+     RowBox[{"63", "-", 
+      RowBox[{"78", " ", "x"}], "+", 
+      RowBox[{"19", " ", 
+       SuperscriptBox["x", "2"]}]}], ")"}]}]}],
+  SequenceForm[
+  "Simlified polynomial p(x)=", 
+   Rational[1, 4] $CellContext`x (63 - 78 $CellContext`x + 
+    19 $CellContext`x^2)],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8547693295460873`*^9},
+ CellLabel->
+  "During evaluation of \
+In[33]:=",ExpressionUUID->"0b7edc2b-2fb2-4853-a5e3-f567638caa37"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Approximate value of f at x=1.5 is \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "4.21875`"}]}],
+  SequenceForm["Approximate value of f at x=1.5 is ", -4.21875],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.854769329561715*^9},
+ CellLabel->
+  "During evaluation of \
+In[33]:=",ExpressionUUID->"18e85225-c304-4881-9998-ae2fd40790d2"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xi", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "3"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fi", "=", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "3", ",", "55"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"Length", "[", "xi", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"k", "=", "1"}], ",", 
+    RowBox[{"k", "\[LessEqual]", "n"}], ",", 
+    RowBox[{"k", "++"}], ",", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["L", "k"], "[", "x_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        UnderoverscriptBox["\[Product]", 
+         RowBox[{"j", "=", "1"}], 
+         RowBox[{"k", "-", "1"}]], 
+        FractionBox[
+         RowBox[{"x", "-", 
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}], 
+         RowBox[{
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "k", "]"}], "]"}], "-", 
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}]]}], ")"}], "*", 
+      RowBox[{"(", 
+       RowBox[{
+        UnderoverscriptBox["\[Product]", 
+         RowBox[{"j", "=", 
+          RowBox[{"k", "+", "1"}]}], "n"], 
+        FractionBox[
+         RowBox[{"x", "-", 
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}], 
+         RowBox[{
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "k", "]"}], "]"}], "-", 
+          RowBox[{"xi", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}]]}], ")"}]}]}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "x_", "]"}], "=", 
+   RowBox[{
+    UnderoverscriptBox["\[Sum]", 
+     RowBox[{"k", "=", "1"}], "n"], 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["L", "k"], "[", "x", "]"}], "*", 
+     RowBox[{"fi", "[", 
+      RowBox[{"[", "k", "]"}], "]"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Lagrange polynomial p(x)=\>\"", ",", 
+   RowBox[{"p", "[", "x", "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Simlified polynomial p(x)=\>\"", ",", " ", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"p", "[", "x", "]"}], "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Approximate value of f at x=1.5 is \>\"", ",", " ", 
+   RowBox[{"p", "[", "1.5", "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8547693682225633`*^9, 3.8547693796479645`*^9}},
+ CellLabel->"In[41]:=",ExpressionUUID->"639217b1-8b2b-4e0c-9638-e4672e307adb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Lagrange polynomial p(x)=\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{
+     FractionBox["1", "3"], " ", 
+     RowBox[{"(", 
+      RowBox[{"1", "-", "x"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{"3", "-", "x"}], ")"}]}], "+", 
+    RowBox[{
+     FractionBox["3", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{"3", "-", "x"}], ")"}], " ", "x"}], "+", 
+    RowBox[{
+     FractionBox["55", "6"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "x"}], ")"}], " ", "x"}]}]}],
+  SequenceForm[
+  "Lagrange polynomial p(x)=", 
+   Rational[1, 3] (1 - $CellContext`x) (3 - $CellContext`x) + 
+   Rational[3, 2] (3 - $CellContext`x) $CellContext`x + 
+   Rational[55, 6] (-1 + $CellContext`x) $CellContext`x],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8547693803354373`*^9},
+ CellLabel->
+  "During evaluation of \
+In[41]:=",ExpressionUUID->"48a6c60a-459c-4768-aa17-6cd4ce7c8324"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Simlified polynomial p(x)=\"\>", "\[InvisibleSpace]", 
+   RowBox[{"1", "-", 
+    RowBox[{"6", " ", "x"}], "+", 
+    RowBox[{"8", " ", 
+     SuperscriptBox["x", "2"]}]}]}],
+  SequenceForm[
+  "Simlified polynomial p(x)=", 1 - 6 $CellContext`x + 8 $CellContext`x^2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.854769380351062*^9},
+ CellLabel->
+  "During evaluation of \
+In[41]:=",ExpressionUUID->"2e23bc87-3f1f-4281-b67d-bdd7beffc269"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Approximate value of f at x=1.5 is \"\>", "\[InvisibleSpace]", 
+   "10.`"}],
+  SequenceForm["Approximate value of f at x=1.5 is ", 10.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.854769380351062*^9},
+ CellLabel->
+  "During evaluation of \
+In[41]:=",ExpressionUUID->"77ba80e5-61cc-4694-904f-f30249fc7f27"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+Magnification->1.5,
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 152, 3, 43, "Input",ExpressionUUID->"c6a5399a-16ca-4d73-993f-20f1e4d5ddfb"],
+Cell[555, 18, 373, 8, 86, "Text",ExpressionUUID->"81ac7cd8-2f6d-4543-bf59-837426857e16"],
+Cell[CellGroupData[{
+Cell[953, 30, 2838, 80, 348, "Input",ExpressionUUID->"a50b3661-211f-4901-8945-a65de96b3050"],
+Cell[CellGroupData[{
+Cell[3816, 114, 1604, 45, 52, "Print",ExpressionUUID->"94b7bbaf-2254-47fe-a0cc-c71cbec25b3c"],
+Cell[5423, 161, 650, 17, 36, "Print",ExpressionUUID->"8dd20943-4dec-4d86-a98d-5f0705aaa194"],
+Cell[6076, 180, 455, 11, 34, "Print",ExpressionUUID->"5834d086-a4b7-4f21-886c-d13d44e155db"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6580, 197, 2584, 74, 348, "Input",ExpressionUUID->"1cc45921-3f7c-4a47-b46a-aa424965cd61"],
+Cell[CellGroupData[{
+Cell[9189, 275, 997, 30, 34, "Print",ExpressionUUID->"ac2f7e2c-0522-4ac4-9b99-94a27c5c3cf1"],
+Cell[10189, 307, 406, 10, 36, "Print",ExpressionUUID->"b32b70a7-5615-4ce2-8e48-1b1f704c5ccd"],
+Cell[10598, 319, 353, 9, 34, "Print",ExpressionUUID->"3b071be7-f8ad-44c4-a4a9-3c8fab3a71e8"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11000, 334, 2538, 73, 348, "Input",ExpressionUUID->"e0727823-a5e2-447c-bc9e-e53c0ba63a4a"],
+Cell[CellGroupData[{
+Cell[13563, 411, 520, 14, 52, "Print",ExpressionUUID->"0c4bccae-ce2e-4926-8ce6-75ef219a7ac2"],
+Cell[14086, 427, 567, 16, 52, "Print",ExpressionUUID->"94ea5603-1a48-40a8-b223-b261865792fb"],
+Cell[14656, 445, 389, 9, 34, "Print",ExpressionUUID->"42117007-15ea-427e-b215-82beab8f99ce"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15094, 460, 2614, 76, 348, "Input",ExpressionUUID->"be0ec3e0-9285-41c2-bc29-329b3e9b74f8"],
+Cell[CellGroupData[{
+Cell[17733, 540, 923, 27, 52, "Print",ExpressionUUID->"4219fec7-fa3f-4116-a257-c00891114fd5"],
+Cell[18659, 569, 628, 18, 52, "Print",ExpressionUUID->"0b7edc2b-2fb2-4853-a5e3-f567638caa37"],
+Cell[19290, 589, 386, 9, 34, "Print",ExpressionUUID->"18e85225-c304-4881-9998-ae2fd40790d2"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19725, 604, 2541, 73, 348, "Input",ExpressionUUID->"639217b1-8b2b-4e0c-9638-e4672e307adb"],
+Cell[CellGroupData[{
+Cell[22291, 681, 960, 28, 52, "Print",ExpressionUUID->"48a6c60a-459c-4768-aa17-6cd4ce7c8324"],
+Cell[23254, 711, 489, 13, 36, "Print",ExpressionUUID->"2e23bc87-3f1f-4281-b67d-bdd7beffc269"],
+Cell[23746, 726, 362, 9, 34, "Print",ExpressionUUID->"77ba80e5-61cc-4694-904f-f30249fc7f27"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

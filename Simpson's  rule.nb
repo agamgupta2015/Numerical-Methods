@@ -1,0 +1,469 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     14760,        461]
+NotebookOptionsPosition[     12714,        413]
+NotebookOutlinePosition[     13055,        428]
+CellTagsIndexPosition[     13012,        425]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "Practical Simpson\[CloseCurlyQuote]s 1/3 rule \n",
+ StyleBox["Q1", "Subtitle"]
+}], "Title",
+ CellChangeTimes->{{3.4713162945127015`*^9, 3.4713163254319553`*^9}, {
+  3.859552481757537*^9, 
+  3.859552482101276*^9}},ExpressionUUID->"99f49e10-dffb-49a1-8f14-\
+698604eca303"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", "6"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"h", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"b", "-", "a"}], ")"}], "/", "n"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], " ", ":=", " ", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"5", "+", 
+      RowBox[{"3", "*", "x"}]}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sn", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"h", "/", "3"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"f", "[", "a", "]"}], " ", "+", " ", 
+      RowBox[{"4", "*", 
+       RowBox[{"Sum", "[", 
+        RowBox[{
+         RowBox[{"f", "[", "i", "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{"a", "+", "h"}], ",", 
+           RowBox[{"b", "-", "h"}], ",", 
+           RowBox[{"2", "*", "h"}]}], "}"}]}], "]"}]}], "+", 
+      RowBox[{"2", "*", 
+       RowBox[{"Sum", "[", 
+        RowBox[{
+         RowBox[{"f", "[", "i", "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{"a", "+", 
+            RowBox[{"2", "*", "h"}]}], ",", " ", 
+           RowBox[{"b", "-", 
+            RowBox[{"2", "*", "h"}]}], ",", 
+           RowBox[{"2", "*", "h"}]}], "}"}]}], "]"}]}], "+", 
+      RowBox[{"f", "[", "b", "]"}]}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Simpson Estimate is :\>\"", ",", 
+   RowBox[{"N", "[", "sn", "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.471316329207162*^9, 
+  3.4713165578255606`*^9}},ExpressionUUID->"7e795586-c8b1-4620-90d5-\
+9597475837c3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Simpson Estimate is :\"\>", "\[InvisibleSpace]", 
+   "0.10615136449759772`"}],
+  SequenceForm["Simpson Estimate is :", 0.10615136449759772`],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.471316564517972*^9},ExpressionUUID->"7062155d-f35b-4893-ae9b-\
+465e6229f0e1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q2", "Subtitle",
+ CellChangeTimes->{{3.471316581568802*^9, 
+  3.471316582114803*^9}},ExpressionUUID->"6239f624-03fa-4960-91a8-\
+0c679ff142b3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", "6"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"h", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"b", "-", "a"}], ")"}], "/", "n"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], " ", ":=", " ", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"x", "^", "2"}], "+", 
+      RowBox[{"6", "*", "x"}], "+", "10"}], ")"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sn", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"h", "/", "3"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"f", "[", "a", "]"}], " ", "+", " ", 
+      RowBox[{"4", "*", 
+       RowBox[{"Sum", "[", 
+        RowBox[{
+         RowBox[{"f", "[", "i", "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{"a", "+", "h"}], ",", 
+           RowBox[{"b", "-", "h"}], ",", 
+           RowBox[{"2", "*", "h"}]}], "}"}]}], "]"}]}], "+", 
+      RowBox[{"2", "*", 
+       RowBox[{"Sum", "[", 
+        RowBox[{
+         RowBox[{"f", "[", "i", "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{"a", "+", 
+            RowBox[{"2", "*", "h"}]}], ",", " ", 
+           RowBox[{"b", "-", 
+            RowBox[{"2", "*", "h"}]}], ",", 
+           RowBox[{"2", "*", "h"}]}], "}"}]}], "]"}]}], "+", 
+      RowBox[{"f", "[", "b", "]"}]}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Simpson Estimate is :\>\"", ",", 
+   RowBox[{"N", "[", "sn", "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.471316596981629*^9, 
+  3.47131664914812*^9}},ExpressionUUID->"fddff23b-37f7-4b34-8887-\
+1bcb34f12b6e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Simpson Estimate is :\"\>", "\[InvisibleSpace]", 
+   "0.07677206303693726`"}],
+  SequenceForm["Simpson Estimate is :", 0.07677206303693726],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.471316627932083*^9, 
+  3.471316652065325*^9}},ExpressionUUID->"ee6b4df4-a441-437e-a72a-\
+8a75673a77eb"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q3", "Subtitle",
+ CellChangeTimes->{{3.4713166635849447`*^9, 
+  3.4713166658157487`*^9}},ExpressionUUID->"b4180209-dbe0-46de-a046-\
+49ac0a9bb02f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", "4"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", "6"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"h", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"b", "-", "a"}], ")"}], "/", "n"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], " ", ":=", " ", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", "x", ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sn", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"h", "/", "3"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"f", "[", "a", "]"}], " ", "+", " ", 
+      RowBox[{"4", "*", 
+       RowBox[{"Sum", "[", 
+        RowBox[{
+         RowBox[{"f", "[", "i", "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{"a", "+", "h"}], ",", 
+           RowBox[{"b", "-", "h"}], ",", 
+           RowBox[{"2", "*", "h"}]}], "}"}]}], "]"}]}], "+", 
+      RowBox[{"2", "*", 
+       RowBox[{"Sum", "[", 
+        RowBox[{
+         RowBox[{"f", "[", "i", "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{"a", "+", 
+            RowBox[{"2", "*", "h"}]}], ",", " ", 
+           RowBox[{"b", "-", 
+            RowBox[{"2", "*", "h"}]}], ",", 
+           RowBox[{"2", "*", "h"}]}], "}"}]}], "]"}]}], "+", 
+      RowBox[{"f", "[", "b", "]"}]}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Simpson Estimate is :\>\"", ",", 
+   RowBox[{"N", "[", "sn", "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.471316672913761*^9, 3.471316673912163*^9}, {
+  3.471316748951894*^9, 3.4713167501686954`*^9}, {3.471316917532731*^9, 
+  3.471316926377946*^9}},ExpressionUUID->"c8f812db-47c9-4dc0-8cec-\
+f5f3af7ca46a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Simpson Estimate is :\"\>", "\[InvisibleSpace]", 
+   "0.6931697931697932`"}],
+  SequenceForm["Simpson Estimate is :", 0.6931697931697932],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.47131692828115*^9},ExpressionUUID->"29a3fa8d-3ccc-4f10-964d-c425182f697d"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q4", "Subtitle",
+ CellChangeTimes->{{3.471316932680357*^9, 
+  3.4713169330079575`*^9}},ExpressionUUID->"9a34eb62-6f7b-4cd3-9da2-\
+a31bd767bae5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", "6"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"h", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"b", "-", "a"}], ")"}], "/", "n"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], " ", ":=", " ", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"1", "+", "x"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sn", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"h", "/", "3"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"f", "[", "a", "]"}], " ", "+", " ", 
+      RowBox[{"4", "*", 
+       RowBox[{"Sum", "[", 
+        RowBox[{
+         RowBox[{"f", "[", "i", "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{"a", "+", "h"}], ",", 
+           RowBox[{"b", "-", "h"}], ",", 
+           RowBox[{"2", "*", "h"}]}], "}"}]}], "]"}]}], "+", 
+      RowBox[{"2", "*", 
+       RowBox[{"Sum", "[", 
+        RowBox[{
+         RowBox[{"f", "[", "i", "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{"a", "+", 
+            RowBox[{"2", "*", "h"}]}], ",", " ", 
+           RowBox[{"b", "-", 
+            RowBox[{"2", "*", "h"}]}], ",", 
+           RowBox[{"2", "*", "h"}]}], "}"}]}], "]"}]}], "+", 
+      RowBox[{"f", "[", "b", "]"}]}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Simpson Estimate is :\>\"", ",", 
+   RowBox[{"N", "[", "sn", "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.4713169409171715`*^9, 
+  3.471316953443993*^9}},ExpressionUUID->"8d978d20-0f21-4e41-badc-\
+cc4ca62ad36a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Simpson Estimate is :\"\>", "\[InvisibleSpace]", 
+   "1.0989417989417989`"}],
+  SequenceForm["Simpson Estimate is :", 1.0989417989417989`],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.4713169547231956`*^9},ExpressionUUID->"da184ec1-ea7e-4fd2-b599-\
+07e95bcc118c"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Q5", "Subtitle",
+ CellChangeTimes->{{3.471316957936801*^9, 
+  3.471316958264402*^9}},ExpressionUUID->"69b341f3-82ef-402c-913e-\
+8e81ba9ffef3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", "3"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", "6"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"h", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"b", "-", "a"}], ")"}], "/", "n"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], " ", ":=", " ", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      RowBox[{"x", "^", "3"}]}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sn", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"h", "/", "3"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"f", "[", "a", "]"}], " ", "+", " ", 
+      RowBox[{"4", "*", 
+       RowBox[{"Sum", "[", 
+        RowBox[{
+         RowBox[{"f", "[", "i", "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{"a", "+", "h"}], ",", 
+           RowBox[{"b", "-", "h"}], ",", 
+           RowBox[{"2", "*", "h"}]}], "}"}]}], "]"}]}], "+", 
+      RowBox[{"2", "*", 
+       RowBox[{"Sum", "[", 
+        RowBox[{
+         RowBox[{"f", "[", "i", "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{"a", "+", 
+            RowBox[{"2", "*", "h"}]}], ",", " ", 
+           RowBox[{"b", "-", 
+            RowBox[{"2", "*", "h"}]}], ",", 
+           RowBox[{"2", "*", "h"}]}], "}"}]}], "]"}]}], "+", 
+      RowBox[{"f", "[", "b", "]"}]}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Simpson Estimate is :\>\"", ",", 
+   RowBox[{"N", "[", "sn", "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.471316964707213*^9, 
+  3.4713169763760333`*^9}},ExpressionUUID->"9ba67e14-15e1-4908-a7d1-\
+bb9fb572bc7e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Simpson Estimate is :\"\>", "\[InvisibleSpace]", 
+   "1.1613965469228626`"}],
+  SequenceForm["Simpson Estimate is :", 1.1613965469228626`],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.4713169774368353`*^9},ExpressionUUID->"9decdd70-d039-4948-a6ef-\
+564dcde15523"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "Title",
+ CellChangeTimes->{{3.4713196754034233`*^9, 
+  3.4713196852314405`*^9}},ExpressionUUID->"139bceee-c923-4aa0-8892-\
+e06c571eaf7e"]
+},
+WindowSize->{1350, 633},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 288, 7, 131, "Title",ExpressionUUID->"99f49e10-dffb-49a1-8f14-698604eca303"],
+Cell[CellGroupData[{
+Cell[892, 33, 1811, 54, 143, "Input",ExpressionUUID->"7e795586-c8b1-4620-90d5-9597475837c3"],
+Cell[2706, 89, 322, 8, 22, "Print",ExpressionUUID->"7062155d-f35b-4893-ae9b-465e6229f0e1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3065, 102, 148, 3, 53, "Subtitle",ExpressionUUID->"6239f624-03fa-4960-91a8-0c679ff142b3"],
+Cell[CellGroupData[{
+Cell[3238, 109, 1849, 56, 143, "Input",ExpressionUUID->"fddff23b-37f7-4b34-8887-1bcb34f12b6e"],
+Cell[5090, 167, 345, 8, 22, "Print",ExpressionUUID->"ee6b4df4-a441-437e-a72a-8a75673a77eb"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5484, 181, 152, 3, 53, "Subtitle",ExpressionUUID->"b4180209-dbe0-46de-a046-49ac0a9bb02f"],
+Cell[CellGroupData[{
+Cell[5661, 188, 1853, 53, 143, "Input",ExpressionUUID->"c8f812db-47c9-4dc0-8cec-f5f3af7ca46a"],
+Cell[7517, 243, 316, 7, 22, "Print",ExpressionUUID->"29a3fa8d-3ccc-4f10-964d-c425182f697d"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7882, 256, 150, 3, 53, "Subtitle",ExpressionUUID->"9a34eb62-6f7b-4cd3-9da2-a31bd767bae5"],
+Cell[CellGroupData[{
+Cell[8057, 263, 1784, 53, 143, "Input",ExpressionUUID->"8d978d20-0f21-4e41-badc-cc4ca62ad36a"],
+Cell[9844, 318, 322, 8, 22, "Print",ExpressionUUID->"da184ec1-ea7e-4fd2-b599-07e95bcc118c"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10215, 332, 148, 3, 53, "Subtitle",ExpressionUUID->"69b341f3-82ef-402c-913e-8e81ba9ffef3"],
+Cell[CellGroupData[{
+Cell[10388, 339, 1811, 54, 143, "Input",ExpressionUUID->"9ba67e14-15e1-4908-a7d1-bb9fb572bc7e"],
+Cell[12202, 395, 322, 8, 22, "Print",ExpressionUUID->"9decdd70-d039-4948-a6ef-564dcde15523"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[12563, 408, 147, 3, 96, "Title",ExpressionUUID->"139bceee-c923-4aa0-8892-e06c571eaf7e"]
+}
+]
+*)
+
